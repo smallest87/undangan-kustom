@@ -32,11 +32,5 @@ $is_mobile_device = isMobile(); // Jalankan deteksi sekali
 $postModel = new PostModel();
 $posts = $postModel->getAllPosts(); // Ambil semua postingan dari database
 
-// 4. Memuat View
-// Variabel $is_mobile_device dan $posts akan tersedia di dalam views/fragments.php
-// Kita juga akan meneruskan nilai konfigurasi dari config.php
-$scroll_speed_ms = SCROLL_SPEED_MS;
-$min_time_per_fragment_ms = MIN_TIME_PER_FRAGMENT_MS;
-
 require_once __DIR__ . '/views/fragments.php';
 ?>
