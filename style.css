@@ -1,0 +1,96 @@
+/* style.css */
+
+/* Aturan dasar untuk memastikan halaman menempati seluruh ruang */
+html, body {
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; akan diatur oleh JS untuk overflow-y, tapi ini tetap bagus */
+    overflow-x: hidden; /* Sembunyikan scrollbar horizontal */
+    scroll-behavior: smooth; /* Untuk scroll yang halus saat navigasi bookmark */
+    /* background-color: #f4f4f4; */ /* Warna latar belakang umum */
+}
+
+/* KONTROL TRANSPARAN: Menerima semua event sentuh/gulir */
+#transparent-control {
+    position: fixed; /* Posisi tetap di viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999; /* Pastikan di atas elemen lain */
+    /* background-color: rgba(0, 0, 0, 0.05); /* Untuk debugging, bisa dihapus atau dibuat transparan penuh */
+    pointer-events: auto; /* Memastikan div ini bisa menerima event */
+    
+    /* PENTING: Mencegah perilaku gulir native pada elemen ini */
+    touch-action: none; 
+}
+
+/* Container untuk fragmen layar penuh */
+.fragment {
+    width: 100vw; /* Lebar penuh viewport */
+    height: 100vh; /* Tinggi penuh viewport */
+    display: flex; /* Untuk memusatkan konten di dalam fragmen */
+    justify-content: center; /* Pusat horizontal */
+    align-items: center; /* Pusat vertikal */
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative; /* Penting untuk penempatan konten */
+    font-size: 1.2em;
+    padding: 20px; /* Padding agar konten tidak terlalu menempel tepi */
+    box-sizing: border-box; /* Pastikan padding termasuk dalam width/height */
+}
+
+/* Gaya untuk konten di dalam fragmen */
+.content {
+    max-width: 90%; /* Batasi lebar konten agar tidak terlalu lebar di layar besar */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Latar belakang semi-transparan untuk teks */
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+p {
+    font-size: 1em;
+    margin-top: 0;
+}
+
+/* Warna berbeda untuk setiap fragmen */
+.fragment-1 {
+    background-color: #FF5733; /* Merah Oranye */
+    background-image: linear-gradient(to bottom right, #FF5733, #FF8D6A);
+}
+
+.fragment-2 {
+    background-color: #33FF57; /* Hijau Terang */
+    background-image: linear-gradient(to bottom right, #33FF57, #6AFF8D);
+}
+
+.fragment-3 {
+    background-color: #3357FF; /* Biru Cerah */
+    background-image: linear-gradient(to bottom right, #3357FF, #6A8DFF);
+}
+
+/* Sembunyikan scrollbar di browser yang mendukung (optional, karena JS mengatur overflow) */
+body::-webkit-scrollbar {
+    display: none; /* Untuk Chrome, Safari, Edge */
+}
+body {
+    -ms-overflow-style: none;  /* Untuk Internet Explorer, Edge */
+    scrollbar-width: none;  /* Untuk Firefox */
+}
+
+/* Media Queries untuk responsif dasar (selain scroll kustom) */
+@media (max-width: 480px) {
+    .fragment {
+        font-size: 1em; /* Kurangi ukuran font di layar yang sangat kecil */
+    }
+    h1 {
+        font-size: 2em;
+    }
+}
