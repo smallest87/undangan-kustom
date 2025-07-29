@@ -6,13 +6,6 @@
     <title>Fragmen Dinamis MVC</title>
     <link rel="stylesheet" href="style.css">
     <?php if ($is_mobile_device): ?>
-        <script>
-            // Deklarasikan variabel global yang bisa diakses oleh script.js
-            window.appConfig = {
-                scrollSpeedMs: <?php echo $scroll_speed_ms; ?>,
-                minTimePerFragmentMs: <?php echo $min_time_per_fragment_ms; ?>
-            };
-        </script>
         <script src="script.js"></script>
     <?php endif; ?>
 </head>

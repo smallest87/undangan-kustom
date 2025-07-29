@@ -25,7 +25,7 @@ function setupMobileScroll() {
 
     // --- Mengambil nilai konfigurasi dari window.appConfig ---
     // Pastikan window.appConfig ada dan memiliki properti yang diharapkan
-    const scrollSpeedMs = window.appConfig?.scrollSpeedMs || 800; // Default jika tidak ada config
+    const scrollSpeedMs = window.appConfig?.scrollSpeedMs || 200; // Default jika tidak ada config
     const minTimePerFragmentMs = window.appConfig?.minTimePerFragmentMs || 0; // Default jika tidak ada config
     // --- Akhir pengambilan konfigurasi ---
 
